@@ -29,7 +29,7 @@ const App = () => {
     // Will change animValue value to 0 in .5 seconds
     Animated.timing(animValue, {
       toValue: 0,
-      duration: 500,
+      duration: 1000,
       useNativeDriver: false,
     }).start(() => setShown(false));
   };
@@ -38,8 +38,8 @@ const App = () => {
     !shown && setShown(true);
     Animated.timing(animValue, {
       toValue: shown === true ? 0 : 1,
-      duration: 500,
-      useNativeDriver: false,
+      duration: 1000,
+      useNativeDriver: true,
     }).start(() => {
       shown && setShown(false);
     });
@@ -55,10 +55,14 @@ const App = () => {
               styles.shadow,
               {
                 opacity: animValue,
-                width: animValue.interpolate({
-                  inputRange: [0, 1],
-                  outputRange: [0, 300],
-                }),
+                transform: [
+                  {
+                    scaleX: animValue.interpolate({
+                      inputRange: [0, 0.5, 1],
+                      outputRange: [0, 2, 1],
+                    }),
+                  },
+                ],
               },
             ]}
           >
