@@ -10,6 +10,7 @@ import {
   Dimensions,
 } from "react-native";
 
+// this is a test
 const App = () => {
   // animValue will be used as the value for opacity. Initial Value: 0
   const animValue = useRef(new Animated.Value(0)).current;
