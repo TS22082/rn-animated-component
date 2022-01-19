@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import {
   Animated,
@@ -83,12 +83,6 @@ const App = () => {
                     scale: animValue.interpolate({
                       inputRange: [0, 0.5, 1],
                       outputRange: [1, 2, 1],
-                    }),
-                  },
-                  {
-                    rotate: animValue.interpolate({
-                      inputRange: [0, 0.5, 1],
-                      outputRange: ["0deg", "180deg", "360deg"],
                     }),
                   },
                 ],
